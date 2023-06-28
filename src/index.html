@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Base 64 encoder decoder V1.1.2</title>
+        <link rel="shortcut icon" type="image/png" href="phcw-vjc_400x400.png">
+        <link href="UI_Utils/css/dialog.css" rel="stylesheet">
+        <link href="UI_Utils/css/menuBar.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <link href="UI_Utils/css/scrollBar.css" rel="stylesheet">
+        <!--Fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Catamaran&display=swap" rel="stylesheet"><!--Catamaran text area-->
+        <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300&family=Patua+One&display=swap" rel="stylesheet"><!--Chivo One dlg title-->
+        <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet"><!--Electrolize abd dialog text-->
+        <link href="https://fonts.googleapis.com/css2?family=Varela&display=swap" rel="stylesheet"><!--Varela dlg buttons-->
+        <link href="https://fonts.googleapis.com/css2?family=Jaldi&display=swap" rel="stylesheet"><!--Jaldi menubar-->
+    </head>
+    <body>
+        <script defer type="text/javascript" src="UI_Utils/js/dialog.js"></script>
+        <script defer type="text/javascript" src="base64Utils.js"></script>
+        <script defer type="text/javascript" src="fileDownloader.js"></script>
+
+        <div class="navbar">
+            <div class="dropdown">
+                <button class="dropbtn">File
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <!--<a  onclick="showSettings();" id="show-dialog">Settings</a> settings where not even implemented-->
+                    <a id="openFile">
+                        <label class="button" for="input">Open File</label>
+                        <input type="file" id="input">
+                    </a>
+                    <!--<a href="#" class="link" id="FileDownload">Save</a> Not Working on linux for some reason-->
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Options
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a id="encode">Encode</a>
+                    <a id="decode">Decode</a>
+                    <a onclick="clearText();">Clear</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Help
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a onclick="showAbtDlg();">About</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="settings" class="dialog" style="min-width:500px; min-height:500px;">
+            <div class="titlebar">Security Camera</div>
+            <button name="close">X</button>
+            <div class="content">
+                <p>ShowCamera...</p>
+            </div>
+            <div class="buttonpane">
+                <div class="buttonset">
+                    <button name="cancel">Close</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="about" class="dialog" style="min-width:500px; max-width:500px; min-height:500px; max-height:500px;">
+            <div class="titlebar">About</div>
+            <button name="close">X</button>
+            <div class="content">
+                <p id="abtDlgText">About program</p>
+                <br>
+                <p id="abtDlgText">Version: 1.1.3</p>
+                <br>
+                <p id="abtDlgText">Release notes</p>
+                <p id="abtDlgText">- UI Redesign</p>
+                <p id="abtDlgText">- Full source code ported to Tauri! No more disgusting electron resources! >:D</p>
+            </div>
+            <div class="buttonpane">
+                <div class="buttonset">
+                    <button name="cancel">Close</button>
+                </div>
+            </div>
+        </div>
+        <!--enough space from top lol, it's gonna be changed soon-->
+        <br>
+        <br>
+        <textarea name="" id="text" cols="103" rows="32"></textarea>
+    </body>
+</html>
