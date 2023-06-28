@@ -8,7 +8,7 @@
   },
   "package": {
     "productName": "base-64-encode-decode",
-    "version": "0.0.0"
+    "version": "1.1.3"
   },
   "tauri": {
     "allowlist": {
@@ -21,7 +21,7 @@
     "bundle": {
       "active": true,
       "targets": "all",
-      "identifier": "com.tauri.build",
+      "identifier": "com.tauri.dev",
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",
@@ -35,7 +35,7 @@
     },
     "windows": [
       {
-        "fullscreen": false,
+        "fullscreen": true,
         "resizable": true,
         "title": "base-64-encode-decode",
         "width": 800,
